@@ -54,7 +54,6 @@ const Navbar = () => {
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <Image
-                    className="dark:invert"
                     src="/RHHCC_logo_white-01.png"
                     alt="rhhcc logo"
                     width={150}
