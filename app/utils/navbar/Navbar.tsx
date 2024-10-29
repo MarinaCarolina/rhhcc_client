@@ -13,7 +13,7 @@ import { usePathname } from 'next/navigation';
 import useNavbarStore from '@/app/utils/navbar/useNavbarStore';
 import Dropdown from '@/app/utils/dropdown/Dropdown';
 
-function classNames(...classes) {
+function classNames(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(' ');
 }
 
