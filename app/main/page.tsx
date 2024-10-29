@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import Calendar from '@/app/calendar/page';
 
-export default function MainPage() {
+export default function Main() {
   return (
     <div>
       <Image

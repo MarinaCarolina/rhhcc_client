@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import MainPage from '@/app/(guest)/page';
+import Main from '@/app/main/page';
 
 export default function Home() {
   return (
     <div>
-      <MainPage />
+      <Main />
     </div>
   );
 }
