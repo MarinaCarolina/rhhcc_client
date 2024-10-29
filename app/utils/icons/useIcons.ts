@@ -2,7 +2,11 @@ import { create } from 'zustand';
 import { FaTelegramPlane, FaVk, FaYoutube } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';
 
-const useIcons = create((set) => ({
+interface UseIconsProps {
+  socialMedia: { name: string; href: string, icon: string }[];
+}
+
+const useIcons = create<UseIconsProps>((set) => ({
   socialMedia: [
     { name: 'Telegram', href: 'https://t.me/rhhcc', icon: FaTelegramPlane },
     { name: 'VK', href: 'https://vk.com/rhhcc', icon: FaVk },

@@ -1,6 +1,13 @@
 import { create } from 'zustand';
 
-const useNavbarStore = create((set) => ({
+interface NavbarStoreState {
+  navigation: { name: string; href: string }[];
+  activeNav: string;
+  setActiveNav: (href: string) => void;
+  profileDropdownItems: { name: string; href: string }[];
+}
+
+const useNavbarStore = create<NavbarStoreState>((set) => ({
   activeNav: '/',
   setActiveNav: (href) => set({ activeNav: href }),
   navigation: [
