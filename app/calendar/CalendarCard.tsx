@@ -2,7 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const CalendarCard = ({ stage}) => {
+// Интерфейс для объекта stage
+interface Stage {
+  name: string;
+  src: string;
+  href: string;
+}
+
+// Интерфейс для пропсов CalendarCard
+interface CalendarCardProps {
+  stage: Stage;
+}
+
+const CalendarCard: React.FC<CalendarCardProps> = ({ stage }) => {
   return (
     <div>
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
