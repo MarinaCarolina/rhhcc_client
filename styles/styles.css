@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+  .page {
+    h1 {
+      @apply text-4xl font-bold text-gray-800 mb-4; /* Стили для заголовков h1 */
+    }
+    h2 {
+      @apply text-xl font-semibold text-gray-800 mb-1.5; /* Стили для заголовков h2 */
+    }
+    h3 {
+      @apply text-lg font-medium text-gray-800 mb-1; /* Стили для заголовков h3 */
+    }
+    p {
+      @apply text-base mb-4; /* Стили для параграфов */
+    }
+    ul {
+      @apply list-disc pl-5 mb-10; /* Стили для ненумерованных списков */
+    }
+    li {
+      @apply mb-2; /* Стили для элементов списка */
+    }
+    a {
+      @apply text-blue-500 hover:underline; /* Стили для ссылок */
+    }
+  }
+}
