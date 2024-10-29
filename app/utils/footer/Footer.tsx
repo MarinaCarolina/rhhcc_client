@@ -37,7 +37,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                   >
-                    <IconComponent className="w-6 h-6" aria-label={item.name} />
+                    <IconComponent />
                     <span className="sr-only">{item.name}</span>
                   </Link>
                 );
