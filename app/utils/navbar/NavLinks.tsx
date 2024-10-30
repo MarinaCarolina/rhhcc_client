@@ -10,7 +10,7 @@ const NavLinks = () => {
   const { activeNav, navigation } = useNavbarStore();
 
   return (
-    <div className="flex flex-col items-start space-y-2 sm:flex-row sm:items-center sm:space-x-4">
+    <div className="flex flex-col items-start sm:flex-row sm:items-center sm:space-x-4">
       {navigation.map((item) => (
         <Link
           key={item.name}
