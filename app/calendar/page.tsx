@@ -17,7 +17,7 @@ export default function Calendar() {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {stages.map((stage) => (
-          <CalendarCard stage={stage} key={stage.name}/>
+          <CalendarCard stage={stage} key={stage.name} />
         ))}
       </div>
     </div>

@@ -20,11 +20,11 @@ const CalendarCard: React.FC<CalendarCardProps> = ({ stage }) => {
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <Link href={stage.href}>
           <Image
-              className="rounded-t-lg"
-              src={stage.src}
-              alt={stage.name}
-              width={382}
-              height={382}
+            className="rounded-t-lg"
+            src={stage.src}
+            alt={stage.name}
+            width={382}
+            height={382}
           />
         </Link>
         <div className="p-5">
