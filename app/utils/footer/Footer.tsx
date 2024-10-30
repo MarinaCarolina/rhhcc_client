@@ -9,14 +9,13 @@ const Footer = () => {
   const { socialMedia } = useIcons();
 
   return (
-      <footer className="bottom-0 left-0 w-full bg-white dark:bg-gray-900 z-40 shadow-lg overflow-hidden">
+      <footer className="bottom-0 left-0 w-full bg-white z-40 shadow-lg overflow-hidden">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 flex flex-col md:flex-row justify-between items-center md:items-start">
 
           {/* Логотип и Соцсети */}
           <div className="flex flex-col items-center md:items-start space-y-4 md:space-y-2 text-center md:text-left">
             <Link href="/" className="flex items-center justify-center md:justify-start">
               <Image
-                  className="dark:invert"
                   src="/RHHCC_logo_grey-01.png"
                   alt="rhhcc logo"
                   width={180}
@@ -34,7 +33,7 @@ const Footer = () => {
                         key={item.name}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        className="text-gray-500 hover:text-gray-900"
                     >
                       <IconComponent />
                       <span className="sr-only">{item.name}</span>
@@ -45,7 +44,7 @@ const Footer = () => {
           </div>
 
           {/* Навигация */}
-          <div className="mt-6 md:mt-0 flex flex-wrap justify-center md:justify-end space-x-4 text-gray-500 dark:text-gray-400 font-medium">
+          <div className="mt-6 md:mt-0 flex flex-wrap justify-center md:justify-end space-x-4 text-gray-500 font-medium">
             {navigation.map((item) => (
                 <Link
                     key={item.name}
