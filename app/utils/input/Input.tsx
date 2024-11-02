@@ -3,7 +3,7 @@ import get from 'lodash/get';
 interface IUIInputProps {
   onClick?: () => void;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type?: 'text' | 'password' | 'email';
+  type?: 'text' | 'password' | 'email' | 'number';
   className?: string;
   value?: string;
   name: string;

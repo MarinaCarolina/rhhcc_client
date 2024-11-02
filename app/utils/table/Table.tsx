@@ -1,7 +1,15 @@
 'use client';
-import React from 'react';
+interface Column {
+  header: string;
+  key: string;
+}
 
-const Table = ({ columns, data }) => {
+interface TableProps {
+  columns: Column[];
+  data: Record<string, any>[];
+}
+
+const Table: React.FC<TableProps> = ({ columns, data }) => {
   return (
     <div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

@@ -1,41 +1,26 @@
-type StoreState = {
-  errors: Record<string, { code?: number | string; message: string }> | null;
-} & Record<string, any>;
+import { StateCreator } from 'zustand';
 
-interface IErrorCatcherArgs {
-  id: string;
-  set: (
-    partial:
-      | StoreState
-      | Partial<StoreState>
-      | ((state: StoreState) => StoreState | Partial<StoreState>),
-    replace?: boolean | undefined
-  ) => void;
+interface StoreWithOptionalErrors {
+  errors?: Record<string, { message: string }>;
 }
 
-export const storeErrorCatcher = ({ id, set }: IErrorCatcherArgs) => {
+interface IErrorCatcherArgs<T extends StoreWithOptionalErrors> {
+  id: string;
+  set: StateCreator<T> extends (set: infer U, ...args: any[]) => any ? U : never; // Используем тип set из Zustand
+}
+
+export const storeErrorCatcher = <T extends StoreWithOptionalErrors>({ id, set }: IErrorCatcherArgs<T>) => {
   return async (callback: () => Promise<void> | void) => {
     try {
       return await callback();
     } catch (error: any) {
-      // Создаем объект ошибки по умолчанию
-      const newError: {
-        [id: string]: { code?: number | string; message: string };
-      } = {
-        [id]: { message: 'Неизвестная ошибка' },
+      const newError = {
+        [id]: { message: error.message || 'Неизвестная ошибка' },
       };
 
-      // Записываем сообщение об ошибке
-      if (error instanceof Error) {
-        newError[id] = { message: error.message };
-      }
-
-      // Добавляем ошибку в состояние errors
       set((state) => ({
-        errors: {
-          ...state.errors,
-          ...newError,
-        },
+        ...state,
+        errors: state.errors ? { ...state.errors, ...newError } : newError,
       }));
 
       console.error(id, error);

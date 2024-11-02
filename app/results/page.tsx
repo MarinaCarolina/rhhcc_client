@@ -92,7 +92,9 @@ export default function Results() {
       const workbook = XLSX.read(data, { type: 'array' });
       const sheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[sheetName];
-      const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+      // Указываем тип для jsonData
+      const jsonData: unknown[][] = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
       const [header, ...rows] = jsonData;
       const tracks = rows.map((row) => ({

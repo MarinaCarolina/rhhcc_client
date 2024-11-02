@@ -12,6 +12,7 @@ export interface Track {
 
 interface TrackStore {
   tracks: Track[];
+  errors?: Record<string, { message: string }>;
   selectedTrack: Track | null;
   getTracks: () => Promise<void>;
   getTrackById: (id: string) => Promise<void>;
@@ -23,6 +24,7 @@ interface TrackStore {
 const useTrackStore = create<TrackStore>((set) => ({
   tracks: [],
   selectedTrack: null,
+  errors: {},
 
   // Получение всех треков
   getTracks: async () => {

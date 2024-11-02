@@ -18,7 +18,7 @@ const config: {
       },
     },
   },
-  plugins: [lineClamp],
+  plugins: [],
 };
 
 export default config;
