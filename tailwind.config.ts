@@ -3,7 +3,7 @@ import lineClamp from '@tailwindcss/line-clamp';
 const config: {
   plugins: any[];
   theme: { extend: { colors: { background: string; foreground: string } } };
-  content: string[]
+  content: string[];
 } = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -18,7 +18,7 @@ const config: {
       },
     },
   },
-  plugins: [lineClamp]
+  plugins: [lineClamp],
 };
 
 export default config;
