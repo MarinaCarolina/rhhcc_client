@@ -1,5 +1,3 @@
-import lineClamp from '@tailwindcss/line-clamp';
-
 const config: {
   plugins: any[];
   theme: { extend: { colors: { background: string; foreground: string } } };

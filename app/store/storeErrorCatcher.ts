@@ -6,10 +6,15 @@ interface StoreWithOptionalErrors {
 
 interface IErrorCatcherArgs<T extends StoreWithOptionalErrors> {
   id: string;
-  set: StateCreator<T> extends (set: infer U, ...args: any[]) => any ? U : never; // Используем тип set из Zustand
+  set: StateCreator<T> extends (set: infer U, ...args: any[]) => any
+    ? U
+    : never; // Используем тип set из Zustand
 }
 
-export const storeErrorCatcher = <T extends StoreWithOptionalErrors>({ id, set }: IErrorCatcherArgs<T>) => {
+export const storeErrorCatcher = <T extends StoreWithOptionalErrors>({
+  id,
+  set,
+}: IErrorCatcherArgs<T>) => {
   return async (callback: () => Promise<void> | void) => {
     try {
       return await callback();

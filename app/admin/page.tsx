@@ -1,3 +1,5 @@
-export default function Calendar() {
-  return <div>Admin</div>;
+'use client';
+
+export default function Admin() {
+  return <div></div>;
 }

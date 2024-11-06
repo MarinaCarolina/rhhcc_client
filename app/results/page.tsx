@@ -94,7 +94,9 @@ export default function Results() {
       const worksheet = workbook.Sheets[sheetName];
 
       // Указываем тип для jsonData
-      const jsonData: unknown[][] = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+      const jsonData: unknown[][] = XLSX.utils.sheet_to_json(worksheet, {
+        header: 1,
+      });
 
       const [header, ...rows] = jsonData;
       const tracks = rows.map((row) => ({

@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCalendarAlt } from 'react-icons/fa';
-import { PiMapPinSimpleAreaFill } from 'react-icons/pi';
+import useIcons from '@/app/utils/icons/useIcons';
 
 // Интерфейс для объекта stage
 interface Stage {
@@ -19,6 +18,8 @@ interface CalendarCardProps {
 }
 
 const CalendarCard: React.FC<CalendarCardProps> = ({ stage }) => {
+  const { CalendarIcon, MapIcon } = useIcons();
+
   return (
     <div>
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow overflow-hidden">
@@ -41,11 +42,11 @@ const CalendarCard: React.FC<CalendarCardProps> = ({ stage }) => {
           </div>
           <div className="mb-2">
             <div className="flex items-center space-x-2">
-              <FaCalendarAlt />
+              <CalendarIcon />
               <span className="ml-2">{stage.date}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <PiMapPinSimpleAreaFill />
+              <MapIcon />
               <span className="ml-2">{stage.track}</span>
             </div>
           </div>
