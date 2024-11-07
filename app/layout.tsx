@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import '@/styles/styles.css';
-import Navbar from '@/app/utils/navbar/Navbar';
-import Footer from '@/app/utils/footer/Footer';
+import Navbar from '@/app/utils/components/navbar/Navbar';
+import Footer from '@/app/utils/components/footer/Footer';
 
 const roboto = localFont({
   src: './fonts/Roboto-Regular-webfont.woff',

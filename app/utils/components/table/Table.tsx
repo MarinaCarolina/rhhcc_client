@@ -30,7 +30,9 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
               <tr key={rowIndex} className="bg-white border-b hover:bg-red-50">
                 {columns.map((column, colIndex) => (
                   <td key={colIndex} className="px-6 py-4">
-                    {column.render ? column.render(row) : row[column.key] ?? ''}
+                    {column.render
+                      ? column.render(row)
+                      : (row[column.key] ?? '')}
                   </td>
                 ))}
               </tr>

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { storeErrorCatcher } from '@/app/store/storeErrorCatcher';
-import { sendRequest } from '@/app/store/sendRequest';
+import { storeErrorCatcher } from '@/app/utils/store/storeErrorCatcher';
+import { sendRequest } from '@/app/utils/store/sendRequest';
 
 export interface Track {
   id: string;

@@ -1,9 +1,9 @@
 'use client';
 import React, { FormEvent, useEffect, useState } from 'react';
-import Table from '@/app/utils/table/Table';
-import useTrackStore from '@/app/store/useTrackStore';
-import Button from '@/app/utils/button/Button';
-import Input from '@/app/utils/input/Input';
+import Table from '@/app/utils/components/table/Table';
+import useTrackStore from '@/app/utils/store/useTrackStore';
+import Button from '@/app/utils/components/button/Button';
+import Input from '@/app/utils/components/input/Input';
 import Papa from 'papaparse';
 import * as XLSX from 'xlsx';
 

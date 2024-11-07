@@ -38,10 +38,7 @@ const Input = (props: IUIInputProps) => {
   return (
     <div className={`${className}`}>
       {label && (
-        <label
-          htmlFor={name}
-          className={`mb-2 block text-sm font-medium`}
-        >
+        <label htmlFor={name} className={`mb-2 block text-sm font-medium`}>
           {label}
         </label>
       )}

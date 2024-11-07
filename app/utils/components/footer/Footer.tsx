@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import useNavbarStore from '@/app/utils/navbar/useNavbarStore';
-import useIcons from '@/app/utils/icons/useIcons';
+import useNavbarStore from '@/app/utils/components/navbar/useNavbarStore';
+import useIcons from '@/app/utils/components/icons/useIcons';
 
 const Footer = () => {
   const { navigation } = useNavbarStore();
@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Логотип и Соцсети */}
         <div className="flex flex-col items-center md:items-start space-y-4 md:space-y-2 text-center md:text-left">
           <Link
-            href="/"
+            href="/public"
             className="flex items-center justify-center md:justify-start"
           >
             <Image

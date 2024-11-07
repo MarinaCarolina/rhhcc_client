@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import useIcons from '@/app/utils/icons/useIcons';
+import useIcons from '@/app/utils/components/icons/useIcons';
 
 // Интерфейс для объекта stage
 interface Stage {

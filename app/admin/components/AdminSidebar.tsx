@@ -1,6 +1,6 @@
 'use client';
 import AdminSidebarNav from '@/app/admin/components/AdminSidebarNav';
-import useIcons from '@/app/utils/icons/useIcons';
+import useIcons from '@/app/utils/components/icons/useIcons';
 
 export default function AdminSidebar() {
   const { CalendarIcon, ClassIcon, PilotIcon, ResultIcon, CarIcon, TrackIcon } =

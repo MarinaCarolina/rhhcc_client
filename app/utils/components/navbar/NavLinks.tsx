@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import useNavbarStore from '@/app/utils/navbar/useNavbarStore';
+import useNavbarStore from '@/app/utils/components/navbar/useNavbarStore';
 
 function classNames(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(' ');

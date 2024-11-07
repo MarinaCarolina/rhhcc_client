@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import {
-  FaCalendarAlt, FaEdit,
+  FaCalendarAlt,
+  FaEdit,
   FaTelegramPlane,
   FaVk,
   FaYoutube,
@@ -8,9 +9,9 @@ import {
 import { AiFillInstagram } from 'react-icons/ai';
 import { IconType } from 'react-icons';
 import { PiMapPinSimpleAreaFill } from 'react-icons/pi';
-import {MdDeleteForever, MdDriveEta} from 'react-icons/md';
+import { MdDeleteForever, MdDriveEta } from 'react-icons/md';
 import { TbCategoryFilled } from 'react-icons/tb';
-import {GiFullMotorcycleHelmet, GiTireTracks} from 'react-icons/gi';
+import { GiFullMotorcycleHelmet, GiTireTracks } from 'react-icons/gi';
 import { IoMdTimer } from 'react-icons/io';
 
 interface UseIconsProps {

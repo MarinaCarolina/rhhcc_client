@@ -9,9 +9,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Logo from './Logo';
 import SearchInput from './SearchInput';
 import NavLinks from './NavLinks';
-import useNavbarStore from '@/app/utils/navbar/useNavbarStore';
+import useNavbarStore from '@/app/utils/components/navbar/useNavbarStore';
 import { usePathname } from 'next/navigation';
-import Dropdown from '@/app/utils/dropdown/Dropdown';
+import Dropdown from '@/app/utils/components/dropdown/Dropdown';
 
 const Navbar = () => {
   const { setActiveNav, profileDropdownItems } = useNavbarStore();
