@@ -15,7 +15,7 @@ interface TableProps {
   itemsPerPage?: number;
 }
 
-const Table: React.FC<TableProps> = ({ columns, data, itemsPerPage }) => {
+const Table: React.FC<TableProps> = ({ columns, data, itemsPerPage= 20 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Расчёт данных для текущей страницы
