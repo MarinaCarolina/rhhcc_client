@@ -7,7 +7,7 @@ export interface Track {
   name: string;
   address: string;
   lap_length: number;
-  best_result: number;
+  best_time: number;
 }
 
 interface TrackStore {

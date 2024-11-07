@@ -1,10 +1,10 @@
 'use client';
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
-import Table from '@/app/utils/components/table/Table';
 import useTrackStore, { Track } from '@/app/utils/store/useTrackStore';
+import useIcons from '@/app/utils/components/icons/useIcons';
+import Table from '@/app/utils/components/table/Table';
 import Button from '@/app/utils/components/button/Button';
 import Input from '@/app/utils/components/input/Input';
-import useIcons from '@/app/utils/components/icons/useIcons';
 import CSVParser from '@/app/utils/parsers/CSVParser';
 import ExcelParser from '@/app/utils/parsers/ExcelParser';
 
@@ -22,14 +22,14 @@ export default function TrackAdmin() {
     name: 'НАЗВАНИЕ',
     address: 'АДРЕС',
     lap_length: 'ДЛИНА КРУГА',
-    best_result: 'РЕКОРД RHHCC',
+    best_time: 'РЕКОРД RHHCC',
   };
 
   const columns = [
     { header: 'Название', key: 'name' },
     { header: 'Адрес', key: 'address' },
     { header: 'Длина круга', key: 'lap_length' },
-    { header: 'Рекорд RHHCC', key: 'best_result' },
+    { header: 'Рекорд RHHCC', key: 'best_time' },
     {
       header: 'Редактировать',
       key: 'actions',
@@ -75,17 +75,17 @@ export default function TrackAdmin() {
     const name = formData.get(headerMap.name) as string;
     const address = formData.get(headerMap.address) as string;
     const lap_length = Number(formData.get(headerMap.lap_length));
-    const best_result = Number(formData.get(headerMap.best_result));
+    const best_time = Number(formData.get(headerMap.best_time));
 
     if (currentTrack) {
       await updateTrack(currentTrack.id, {
         name,
         address,
         lap_length,
-        best_result,
+        best_time,
       });
     } else {
-      await addTrack({ name, address, lap_length, best_result });
+      await addTrack({ name, address, lap_length, best_time });
     }
 
     setEditing(false);
@@ -109,7 +109,7 @@ export default function TrackAdmin() {
         track.name &&
         track.address &&
         track.lap_length !== null &&
-        track.best_result !== null
+        track.best_time !== null
       ) {
         await addTrack(track);
       } else {
@@ -209,10 +209,10 @@ export default function TrackAdmin() {
           <Input
             type="number"
             id="best_result"
-            name={headerMap.best_result}
+            name={headerMap.best_time}
             placeholder="Рекорд RHHCC (в миллисекундах)"
             required
-            defaultValue={currentTrack?.best_result || ''}
+            defaultValue={currentTrack?.best_time || ''}
           />
           <Button type="submit" variant="primary">
             Сохранить
@@ -223,7 +223,7 @@ export default function TrackAdmin() {
         </form>
       )}
 
-      <Table columns={columns} data={tracks} />
+      <Table columns={columns} data={tracks} itemsPerPage={20}/>
     </div>
   );
 }
