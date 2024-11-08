@@ -223,7 +223,7 @@ export default function TrackAdmin() {
         </form>
       )}
 
-      <Table columns={columns} data={tracks} itemsPerPage={20}/>
+      <Table columns={columns} data={tracks} itemsPerPage={20} />
     </div>
   );
 }

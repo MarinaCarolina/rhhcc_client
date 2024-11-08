@@ -1,7 +1,7 @@
 'use client';
 import TimeConverter from '@/app/utils/timeConverter/TimeConverter';
-import Pagination from "@/app/utils/components/pagination/Pagination";
-import {FC, useState} from "react";
+import Pagination from '@/app/utils/components/pagination/Pagination';
+import { FC, useState } from 'react';
 
 interface Column {
   header: string;
@@ -15,9 +15,11 @@ interface TableProps {
   itemsPerPage?: number;
 }
 
-const Table: FC<TableProps> = ({ columns, data, itemsPerPage= 20 }) => {
+const Table: FC<TableProps> = ({ columns, data, itemsPerPage = 20 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
+  if (!data || !Array.isArray(data)) {
+    return <div>Данные недоступны или пусты</div>;
+  }
   // Расчёт данных для текущей страницы
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -59,9 +61,9 @@ const Table: FC<TableProps> = ({ columns, data, itemsPerPage= 20 }) => {
           </tbody>
         </table>
         <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
         />
       </div>
     </div>

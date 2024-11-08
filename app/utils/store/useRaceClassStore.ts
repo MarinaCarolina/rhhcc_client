@@ -3,6 +3,7 @@ import { storeErrorCatcher } from '@/app/utils/store/storeErrorCatcher';
 import { sendRequest } from '@/app/utils/store/sendRequest';
 
 export interface RaceClass {
+  id: string;
   name: string;
 }
 
