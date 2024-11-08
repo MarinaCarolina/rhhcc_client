@@ -1,7 +1,7 @@
 'use client';
 import TimeConverter from '@/app/utils/timeConverter/TimeConverter';
 import Pagination from "@/app/utils/components/pagination/Pagination";
-import {useState} from "react";
+import {FC, useState} from "react";
 
 interface Column {
   header: string;
@@ -15,7 +15,7 @@ interface TableProps {
   itemsPerPage?: number;
 }
 
-const Table: React.FC<TableProps> = ({ columns, data, itemsPerPage= 20 }) => {
+const Table: FC<TableProps> = ({ columns, data, itemsPerPage= 20 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Расчёт данных для текущей страницы
